@@ -9,3 +9,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+/* 用户注册页面 验证码*/
+.register-page {
+  img.captcha {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}
