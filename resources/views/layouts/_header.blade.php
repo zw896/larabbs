@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-  <div class="container">
+  <div class="container header-container">
     <a class="navbar-brand" href="#">
       <img src="http://placehold.it/150x50?text=Logo" alt="">
     </a>

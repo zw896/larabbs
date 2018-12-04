@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="edit-container">
     <div class="panel panel-default col-md-10 col-md-offset-1">
         <div class="panel-heading">
             <h4>

@@ -10476,3 +10476,9 @@ a.text-dark:focus {
   cursor: pointer;
 }
 
+.edit-container {
+  height: 0px;
+  padding-bottom: 100%;
+  background: #3490dc;
+}
+
