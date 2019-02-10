@@ -22,7 +22,7 @@
           <a class="nav-link" href="{{ url('/login') }}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('/register') }}">Signup</a>
+          <a class="nav-link" href="{{ route('signup') }}">Signup</a>
         </li>
         @else
         <li class="dropdown">

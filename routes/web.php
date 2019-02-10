@@ -29,6 +29,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::resource('users', 'UsersController');
+Route::get('signup', 'UsersController@create')->name('signup');
 
 
 Auth::routes();

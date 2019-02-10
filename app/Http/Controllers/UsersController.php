@@ -9,6 +9,11 @@ use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
+    public function create()
+    {
+        return view('users.create');
+    }
+
     public function show(User $user)
     {
         return view('users.show', compact('user'));
@@ -23,5 +28,15 @@ class UsersController extends Controller
     {
         $user->update($request->all());
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|confirmed|min:6'
+        ]);
+        return;
     }
 }
