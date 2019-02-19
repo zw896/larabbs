@@ -8,6 +8,21 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+html, body {
+    height:100%;
+    width:100%;
+}
+
+nav.menubar {
+  position: absolute;
+  left: 0px;
+  width: 200px;
+}
+
+.container {
+  position: relative;
+}
+
 /* User gravatar */
 
 section.user_info {

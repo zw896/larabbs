@@ -9,6 +9,17 @@ use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
     public function create()
     {
         return view('users.create');
@@ -21,11 +32,13 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
     public function update(UserRequest $request, User $user)
     {
+        $this->authorize('update', $user);
         // 首先，我们将用户密码验证的 required 规则换成 nullable，这意味着当用户提供空白密码
         // 时也会通过验证，因此我们需要对传入的 password 进行判断，当其值不为空时才将其赋值给
         // data，避免将空白密码保存到数据库中。
@@ -38,11 +51,9 @@ class UsersController extends Controller
         if ($request->password) {
             $data['password'] = bcrypt($request->password);
         }
+        $user->update($data);
 
-        $user->update([
-            'name' => $request->name,
-            'password' => bcrypt($request->password),
-        ]);
+        session()->flash('success', '个人资料更新成功！');
 
         return redirect()->route('users.show', $user->id);
     }
