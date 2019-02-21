@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'Weibo App') - Laravel</title>
+    <title>@yield('title', 'LaraBBS') - Laravel</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
 
