@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'LaraBBS') - Laravel</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <title>@yield('title', 'LaraBBS')</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   </head>
 
   <body>
+
     @include('layouts._header')
 
-    <div class="container">
-      @include('layouts._nav')
-      <div class="offset-md-1 col-md-10">
-        @include('shared._messages')
-        @yield('content')
-        @include('layouts._footer')
-      </div>
-    </div>
+    @yield('content')
 
-    <script src="/js/app.js"></script>
+  <script src="/js/app.js"></script>
   </body>
 </html>
