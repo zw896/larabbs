@@ -2,8 +2,8 @@
 @section('title', 'All users')
 
 @section('content')
-<div class="offset-md-2 col-md-8">
-  <h2 class="mb-4 text-center">All Users</h2>
+<div class="offset-md-2 col-md-8 shadow mx-5">
+  <h2 class="pt-5 mb-5 text-center">All Users</h2>
   <div class="list-group list-group-flush">
     @foreach ($users as $user)
       @include('users._user')

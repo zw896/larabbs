@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
-
-/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10468,30 +10466,82 @@ a.text-dark:focus {
   }
 }
 
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+
 html,
 body {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-/* header */
+/*=====================================
+  HEADER STYLES
+    ===================================*/
 
 a.navbar-brand img {
   height: 50px;
   width: 50px;
 }
 
-/* header end */
-
-/* home */
+/*=====================================
+  HOME STYLES
+    ===================================*/
 
 body {
-  background: url("https://source.unsplash.com/twukN12EN7c/1920x1080") no-repeat center center fixed;
+  background: url("/img/bg.jpeg") no-repeat center center fixed;
   background-size: cover;
   -o-background-size: cover;
 }
 
+body .container-list {
+  padding-bottom: 95px;
+}
+
+div.row {
+  border-radius: 10px;
+}
+
+/* Profile sidebar */
+
+.profile-sidebar {
+  height: 350px;
+  padding: 20px 0 10px 0;
+  margin: 0 0 100px 0;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* Profile Content */
+
+.status_form {
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.mb-4 {
+  min-height: 65px;
+}
+
 /* home end */
+
+/* _status */
+
+img.mr-3 {
+  height: 50px;
+  width: 50px;
+}
+
+/* _status end */
 
 /* User gravatar */
 
@@ -10520,17 +10570,25 @@ section.user_info h1 {
   max-width: 100px;
 }
 
-/* 用户注册页面 验证码*/
+/*=====================================
+  FOOTER STYLES
+    ===================================*/
 
-.register-page img.captcha {
-  margin-bottom: 0px;
-  margin-top: 10px;
-  cursor: pointer;
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding: 5px 20px;
+  margin-top: auto;
+  background-color: #2d3d5a;
+  text-align: right;
+  color: #fff;
+  font-size: 15px;
 }
 
-.fixed-bottom {
-  position: relative;
-}
+/*=====================================
+  EDIT CONTAINER STYLES
+    ===================================*/
 
 .edit-container {
   height: 0px;

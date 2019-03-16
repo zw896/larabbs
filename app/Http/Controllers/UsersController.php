@@ -101,7 +101,7 @@ class UsersController extends Controller
         $data = compact('user');
 
         $to = $user->email;
-        $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
+        $subject = "Thanks for signing up. Please confirm your email address to get full access to Larabbs.";
 
         Mail::send($view, $data, function ($message) use ($to, $subject) {
             $message->to($to)->subject($subject);

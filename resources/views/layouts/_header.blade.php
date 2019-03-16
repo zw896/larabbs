@@ -20,15 +20,28 @@
 
           <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">Users</a></li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ Auth::user()->name }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('users.show', Auth::user()) }}">Info</a>
+              <a class="dropdown-item" href="{{ route('users.edit', Auth::user()) }}">Edit</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="logout" href="#">
+                <form action="{{ route('logout') }}" method="POST">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+                  <button class="btn btn-block btn-danger" type="submit" name="button">Log out</button>
+                </form>
+              </a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
+
+
+
         @else
         <li class="nav-item"><a class="nav-link" href="{{ route('help') }}">Help</a></li>
         <li class="nav-item" ><a class="nav-link" href="{{ route('login') }}">Login</a></li>

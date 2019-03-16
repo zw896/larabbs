@@ -2,20 +2,20 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>注册确认链接</title>
+  <title>Activate your account: </title>
 </head>
 <body>
-  <h1>感谢您在 Weibo App 网站进行注册！</h1>
+  <h1>Thanks for signing up!</h1>
 
   <p>
-    请点击下面的链接完成注册：
+    Please click the link below to activate your account:
     <a href="{{ route('confirm_email', $user->activation_token) }}">
       {{ route('confirm_email', $user->activation_token) }}
     </a>
   </p>
 
   <p>
-    如果这不是您本人的操作，请忽略此邮件。
+    (If this is not your own operation, please ignore this message.)
   </p>
 </body>
 </html>

@@ -9,7 +9,14 @@
 
     @include('layouts._header')
 
-    @yield('content')
+    <div class="container">
+      <div class="container-list offset-md-1 col-md-10">
+        @include('shared._messages')
+        @yield('content')
+      </div>
+    </div>
+
+    @include('layouts._footer')
 
   <script src="/js/app.js"></script>
   </body>
